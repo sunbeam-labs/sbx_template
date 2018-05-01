@@ -1,0 +1,12 @@
+rule test_all_samples_length:
+	input:
+		str(CLASSIFY_FP/'kraken'/'all_samples.tsv')
+	output:
+		str(CLASSIFY_FP/'test'/'all_sample_length.txt')
+	shell:
+		"""
+		wc -l {input} > {output}
+		"""
+
+rule all_test:
+	input: str(CLASSIFY_FP/'test'/'all_sample_length.txt')

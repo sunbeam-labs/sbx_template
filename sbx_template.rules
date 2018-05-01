@@ -1,12 +1,8 @@
-rule test_all_samples_length:
+rule example_rule:
 	input:
-		str(CLASSIFY_FP/'kraken'/'all_samples.tsv')
+		#files required for input	
 	output:
-		str(CLASSIFY_FP/'test'/'all_sample_length.txt')
+		#files created after successful rule completion
 	shell:
-		"""
-		wc -l {input} > {output}
-		"""
+		#commands run during rule
 
-rule all_test:
-	input: str(CLASSIFY_FP/'test'/'all_sample_length.txt')

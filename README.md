@@ -1,2 +1,2 @@
-# sbx_template
-Template for Sunbeam extensions.
+# Template for Sunbeam extensions.
+

@@ -20,7 +20,7 @@ Installing an extension is as simple as cloning (or moving) your extension direc
 
     git clone https://github.com/louiejtaylor/sbx_template/ sunbeam/extensions/sbx_template
     conda install --file sunbeam/extensions/sbx_template/requirements.txt
-    cat sunbeam/extensions/sbx_template/ >> sunbeam_config.yml
+    cat sunbeam/extensions/sbx_template/config.yml >> sunbeam_config.yml
 
 ## Running an extension
 

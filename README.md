@@ -12,7 +12,7 @@ Any dependencies required for an extension should be listed in the `requirements
 
 The `config.yml` contains parameters that the user might need to modify when running an extension. For example, if your downstream analysis is run differently depending on whether reads are paired- or single-end, it would probably be wise to include a `paired_end` parameter. Default values should be specified for each bottom-level key.
 
-Finally, `sbx_template.rules` contains the actual logic for the extension, including required input and output files. A detailed discussion of Snakemake rule creation is beyond the scope of this tutorial, but definitely check out [the Snakemake tutorial](http://snakemake.readthedocs.io/en/stable/tutorial/basics.html) and any of the Sunbeam rules for inspiration.
+Finally, `sbx_template.rules` contains the actual logic for the extension, including required input and output files. A detailed discussion of Snakemake rule creation is beyond the scope of this tutorial, but definitely check out [the Snakemake tutorial](http://snakemake.readthedocs.io/en/stable/tutorial/basics.html) and any of the [extensions by sunbeam-labs](https://github.com/sunbeam-labs) for inspiration.
 
 ## Installing an extension
 

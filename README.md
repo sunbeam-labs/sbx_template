@@ -34,7 +34,7 @@ The dependency .yml file can be named whatever you want, as long as you refer to
 
 Extension install is as simple as passing the extension's URL on GitHub to `sunbeam extend`:
 
-    sunbeam extend https://github.com/sunbeam-labs/sbx_report
+    sunbeam extend https://github.com/sunbeam-labs/sbx_template
 
 Any user-modifiable parameters specified in `config.yml` are automatically added on `sunbeam init`. If you're installing an extension in a project where you already have a config file, run the following to add the options for your newly added extension to your config (the `-i` flag means in-place config file modification; remove the `-i` flag to see the new config in stdout):
 

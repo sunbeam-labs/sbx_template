@@ -36,9 +36,7 @@ class FullRunTests(unittest.TestCase):
 
         self.output_fp = os.path.join(self.project_dir, "sunbeam_output")
 
-        self.big_file_fp = os.path.join(
-            self.output_fp, "qc/mush/big_file.txt"
-        )
+        self.big_file_fp = os.path.join(self.output_fp, "qc/mush/big_file.txt")
 
     def tearDown(self):
         shutil.rmtree(self.temp_dir)

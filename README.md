@@ -1,4 +1,11 @@
+<img src="https://github.com/sunbeam-labs/sunbeam/blob/stable/docs/images/sunbeam_logo.gif" width=120, height=120 align="left" />
+
 # Sunbeam extension template
+
+<!-- Badges start -->
+[![Tests](https://github.com/sunbeam-labs/sbx_template/actions/workflows/tests.yml/badge.svg)](https://github.com/sunbeam-labs/sbx_template/actions/workflows/tests.yml)
+[![Super-Linter](https://github.com/sunbeam-labs/sbx_template/actions/workflows/linters.yml/badge.svg)](https://github.com/sunbeam-labs/sbx_template/actions/workflows/linters.yml)
+<!-- Badges end -->
 
 This is a template to use to extend the [Sunbeam pipeline](https://github.com/sunbeam-labs/sunbeam). There are three major parts to a Sunbeam extension: 
 

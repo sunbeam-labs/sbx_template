@@ -19,8 +19,7 @@ class FullRunTests(unittest.TestCase):
 
         self.config_fp = os.path.join(self.project_dir, "sunbeam_config.yml")
 
-        # Number lines in 'cat's output
-        example_rule_options = "--number"
+        config_str = f"sbx_template: {{example_rule_options: '--number'}}"
 
         sp.check_output(
             [
@@ -29,7 +28,7 @@ class FullRunTests(unittest.TestCase):
                 "modify",
                 "-i",
                 "-s",
-                f"'sbx_template: {{example_rule_options: \"{example_rule_options}\"}}'",
+                f"{config_str}",
                 f"{self.config_fp}",
             ]
         )

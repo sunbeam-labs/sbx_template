@@ -29,7 +29,7 @@ class FullRunTests(unittest.TestCase):
                 "modify",
                 "-i",
                 "-s",
-                f"'sbx_template: {{example_rule_options: {example_rule_options}}}'",
+                f"'sbx_template: {{example_rule_options: \"{example_rule_options}\"}}'",
                 f"{self.config_fp}",
             ]
         )

@@ -1,3 +1,7 @@
+localrules:
+    all_template,
+
+
 rule all_template:
     input:
         QC_FP / "mush" / "big_file.txt",

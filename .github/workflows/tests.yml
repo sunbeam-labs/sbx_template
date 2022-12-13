@@ -1,0 +1,37 @@
+name: Tests
+
+on:
+  pull_request:
+    branches: [ master, main ]
+  schedule:
+    - cron: "0 13 * * 1"
+
+jobs:  
+  test-e2e:
+    name: Test Extension with Sunbeam
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        
+      - name: Test with Sunbeam
+        uses: sunbeam-labs/sbx_test_action@v0
+        with:
+          sunbeam-version: 'stable'
+          extension-name: 'sunbeam-labs/sbx_template'
+          extension-branch-name: ${{ github.head_ref }}
+
+  test-units:
+    name: Run Unittests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: python -m pip install pytest
+      
+      - name: Run Tests
+        run: pytest .tests/unit/

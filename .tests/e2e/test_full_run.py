@@ -14,9 +14,7 @@ def setup():
 
     project_dir = os.path.join(temp_dir, "project/")
 
-    sp.check_output(
-        ["sunbeam", "init", "--data_fp", reads_fp, project_dir]
-    )
+    sp.check_output(["sunbeam", "init", "--data_fp", reads_fp, project_dir])
 
     config_fp = os.path.join(project_dir, "sunbeam_config.yml")
 
@@ -34,9 +32,10 @@ def setup():
         ]
     )
 
-    yield project_dir, temp_dir
+    yield temp_dir, project_dir
 
     shutil.rmtree(temp_dir)
+
 
 @pytest.fixture
 def run_sunbeam(setup):
@@ -63,11 +62,13 @@ def run_sunbeam(setup):
 
     yield big_file_fp, benchmarks_fp
 
+
 def test_full_run(run_sunbeam):
     big_file_fp, benchmarks_fp = run_sunbeam
 
     # Check output
     assert os.path.exists(big_file_fp)
+
 
 def test_benchmarks(run_sunbeam):
     big_file_fp, benchmarks_fp = run_sunbeam

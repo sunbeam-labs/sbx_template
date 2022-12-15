@@ -48,7 +48,7 @@ def run_sunbeam(setup):
             "run",
             "--profile",
             project_dir,
-            "all_classify",
+            "all_template",
             "--directory",
             temp_dir,
         ]

@@ -77,5 +77,4 @@ def test_benchmarks(run_sunbeam):
     with open(os.path.join(benchmarks_fp, filename)) as f:
         rd = csv.DictReader(f, delimiter="\t")
         for r in rd:
-            assert r == 0
-            # assert float(r["cpu_time"]) < 0.0
+            assert float(r["cpu_time"]) < 0.5

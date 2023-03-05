@@ -1,3 +1,13 @@
+try:
+    BENCHMARK_FP
+except NameError:
+    BENCHMARK_FP = output_subdir(Cfg, "benchmarks")
+try:
+    LOG_FP
+except NameError:
+    LOG_FP = output_subdir(Cfg, "logs")
+
+
 localrules:
     all_template,
 

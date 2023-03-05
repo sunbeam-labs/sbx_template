@@ -1,5 +1,4 @@
+name: sbx_template
 channels:
   - conda-forge
   - bioconda
-dependencies:
-  - EXTENSION_PACKAGE_DEPENDENCIES

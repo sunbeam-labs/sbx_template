@@ -1,4 +1,11 @@
+<img src="https://github.com/sunbeam-labs/sunbeam/blob/stable/docs/images/sunbeam_logo.gif" width=120, height=120 align="left" />
+
 # Sunbeam extension template
+
+<!-- Badges start -->
+[![Tests](https://github.com/sunbeam-labs/sbx_template/actions/workflows/tests.yml/badge.svg)](https://github.com/sunbeam-labs/sbx_template/actions/workflows/tests.yml)
+[![Super-Linter](https://github.com/sunbeam-labs/sbx_template/actions/workflows/linters.yml/badge.svg)](https://github.com/sunbeam-labs/sbx_template/actions/workflows/linters.yml)
+<!-- Badges end -->
 
 This is a template to use to extend the [Sunbeam pipeline](https://github.com/sunbeam-labs/sunbeam). There are three major parts to a Sunbeam extension: 
 
@@ -38,7 +45,7 @@ Extension install is as simple as passing the extension's URL on GitHub to `sunb
 
 Any user-modifiable parameters specified in `config.yml` are automatically added on `sunbeam init`. If you're installing an extension in a project where you already have a config file, run the following to add the options for your newly added extension to your config (the `-i` flag means in-place config file modification; remove the `-i` flag to see the new config in stdout):
 
-    sunbeam config update -i sunbeam_config.yml
+    sunbeam config update -i /path/to/project/sunbeam_config.yml
 
 Installation instructions for older versions of Sunbeam are included at the end of this README.
 
@@ -46,11 +53,21 @@ Installation instructions for older versions of Sunbeam are included at the end 
 
 To run an extension, simply run Sunbeam as usual with your extension's target rule specified:
 
-    sunbeam run --configfile=sunbeam_config.yml --use-conda example_rule
+    sunbeam run --profile /path/to/project/ example_rule
 
-The `--use-conda` flag is required to let Snakemake know that you want to use the conda environment(s) included with your extension.
+## Additional extension components
 
--------
+### .github/
+
+This directory contains CI workflows for GitHub to run automatically on PRs, including tests and linting. If the linter raises errors, you can fix them by running `snakefmt` on any snakemake files and `black` on any python files.
+
+### .tests/
+
+This directory contains tests, broken down into types such as end-to-end (e2e) and unit, as well as data for running these tests.
+
+### scripts/
+
+This directory contains scripts that can be run by rules. Use this for any rules that need to run python, R, etc code.
     
 ## Installing an extension (legacy instructions for sunbeam <3.0)
 

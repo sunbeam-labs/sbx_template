@@ -20,7 +20,7 @@ jobs:
       - name: Test with Sunbeam
         uses: sunbeam-labs/sbx_test_action@v0
         with:
-          sunbeam-version: 'dev'
+          sunbeam-version: 'main'
           extension-name: 'sunbeam-labs/sbx_template'
           extension-branch-name: ${{ github.head_ref }}
 

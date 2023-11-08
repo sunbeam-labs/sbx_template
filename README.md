@@ -1,12 +1,3 @@
-<img src="https://github.com/sunbeam-labs/sunbeam/blob/stable/docs/images/sunbeam_logo.gif" width=120, height=120 align="left" />
-
-# Sunbeam extension template
-
-<!-- Badges start -->
-[![Tests](https://github.com/sunbeam-labs/sbx_template/actions/workflows/tests.yml/badge.svg)](https://github.com/sunbeam-labs/sbx_template/actions/workflows/tests.yml)
-[![Super-Linter](https://github.com/sunbeam-labs/sbx_template/actions/workflows/linters.yml/badge.svg)](https://github.com/sunbeam-labs/sbx_template/actions/workflows/linters.yml)
-<!-- Badges end -->
-
 This is a template to use to extend the [Sunbeam pipeline](https://github.com/sunbeam-labs/sunbeam). There are three major parts to a Sunbeam extension: 
 
  - `sbx_template_env.yml` specifies the extension's dependencies
@@ -37,24 +28,6 @@ For each rule that needs dependencies from your environment file, make sure to l
 
 The dependency .yml file can be named whatever you want, as long as you refer to it by the correct filename in whatever rule needs those dependencies. The path to the dependency .yml file is relative to the .rules file (which in most cases is in the same directory).
 
-## Installing an extension
-
-Extension install is as simple as passing the extension's URL on GitHub to `sunbeam extend`:
-
-    sunbeam extend https://github.com/sunbeam-labs/sbx_template
-
-Any user-modifiable parameters specified in `config.yml` are automatically added on `sunbeam init`. If you're installing an extension in a project where you already have a config file, run the following to add the options for your newly added extension to your config (the `-i` flag means in-place config file modification; remove the `-i` flag to see the new config in stdout):
-
-    sunbeam config update -i /path/to/project/sunbeam_config.yml
-
-Installation instructions for older versions of Sunbeam are included at the end of this README.
-
-## Running an extension
-
-To run an extension, simply run Sunbeam as usual with your extension's target rule specified:
-
-    sunbeam run --profile /path/to/project/ example_rule
-
 ## Additional extension components
 
 ### .github/
@@ -68,6 +41,44 @@ This directory contains tests, broken down into types such as end-to-end (e2e) a
 ### scripts/
 
 This directory contains scripts that can be run by rules. Use this for any rules that need to run python, R, etc code.
+
+(You can delete everything above this line)
+-----------------------------------------------------------------
+
+<img src="https://github.com/sunbeam-labs/sunbeam/blob/stable/docs/images/sunbeam_logo.gif" width=120, height=120 align="left" />
+
+# Sunbeam extension template
+
+<!-- Badges start -->
+[![Tests](https://github.com/sunbeam-labs/sbx_template/actions/workflows/tests.yml/badge.svg)](https://github.com/sunbeam-labs/sbx_template/actions/workflows/tests.yml)
+[![Super-Linter](https://github.com/sunbeam-labs/sbx_template/actions/workflows/linters.yml/badge.svg)](https://github.com/sunbeam-labs/sbx_template/actions/workflows/linters.yml)
+<!-- Badges end -->
+
+## Introduction
+
+sbx_template is a [sunbeam](https://github.com/sunbeam-labs/sunbeam) extension for .... This pipeline uses ....
+
+## Installation
+
+Extension install is as simple as passing the extension's URL on GitHub to `sunbeam extend`:
+
+    sunbeam extend https://github.com/sunbeam-labs/sbx_template
+
+Any user-modifiable parameters specified in `config.yml` are automatically added on `sunbeam init`. If you're installing an extension in a project where you already have a config file, run the following to add the options for your newly added extension to your config (the `-i` flag means in-place config file modification; remove the `-i` flag to see the new config in stdout):
+
+    sunbeam config update -i /path/to/project/sunbeam_config.yml
+
+Installation instructions for older versions of Sunbeam are included at the end of this README.
+
+## Running
+
+To run an extension, simply run Sunbeam as usual with your extension's target rule specified:
+
+    sunbeam run --profile /path/to/project/ example_rule
+
+### Options for config.yml
+
+  - example_rule_options: Example rule options description
     
 ## Installing an extension (legacy instructions for sunbeam <3.0)
 
@@ -76,3 +87,6 @@ Installing an extension is as simple as cloning (or moving) your extension direc
     git clone https://github.com/louiejtaylor/sbx_template/ sunbeam/extensions/sbx_template
     cat sunbeam/extensions/sbx_template/config.yml >> sunbeam_config.yml
 
+## Issues with pipeline
+
+Please post any issues with this extension [here](https://github.com/sunbeam-labs/sbx_template/issues).

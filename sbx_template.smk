@@ -30,7 +30,7 @@ rule example_rule:
     params:
         opts=Cfg["sbx_template"]["example_rule_options"],
     conda:
-        "sbx_template_env.yml"
+        "envs/sbx_template_env.yml"
     shell:
         "cat {params.opts} {input} >> {output} 2> {log}"
 
@@ -46,6 +46,6 @@ rule example_with_script:
     benchmark:
         BENCHMARK_FP / "example_with_script.tsv"
     conda:
-        "sbx_template_env.yml"
+        "envs/sbx_template_env.yml"
     script:
         "scripts/example_with_script.py"

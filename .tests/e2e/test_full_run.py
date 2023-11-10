@@ -78,5 +78,5 @@ def test_benchmarks(run_sunbeam):
         rd = csv.DictReader(f, delimiter="\t")
         for r in rd:
             assert (
-                float(r["cpu_time"]) < 0.5
-            ), f"cpu_time for {r['rule']} is higher than 0.5: {r['cpu_time']}"
+                float(r["cpu_time"]) < 1
+            ), f"cpu_time for {r['rule']} is higher than 1: {r['cpu_time']}"

@@ -84,7 +84,7 @@ To run an extension, simply run Sunbeam as usual with your extension's target ru
 
 Installing an extension is as simple as cloning (or moving) your extension directory into the sunbeam/extensions/ folder, installing requirements through Conda, and adding the new options to your existing configuration file: 
 
-    git clone https://github.com/louiejtaylor/sbx_template/ sunbeam/extensions/sbx_template
+    git clone https://github.com/sunbeam-labs/sbx_template/ sunbeam/extensions/sbx_template
     cat sunbeam/extensions/sbx_template/config.yml >> sunbeam_config.yml
 
 ## Issues with pipeline

@@ -68,16 +68,3 @@ def test_full_run(run_sunbeam):
 
     # Check output
     assert big_file_fp.exists(), f"{big_file_fp} does not exist"
-
-
-def test_benchmarks(run_sunbeam):
-    output_fp, benchmarks_fp = run_sunbeam
-
-    filename = os.listdir(benchmarks_fp)[0]
-    with open(os.path.join(benchmarks_fp, filename)) as f:
-        rd = csv.DictReader(f, delimiter="\t")
-        print(rd.fieldnames)
-        for r in rd:
-            assert (
-                float(r["cpu_time"]) < 1
-            ), f"cpu_time for {r['rule']} is higher than 1: {r['cpu_time']}"

@@ -25,6 +25,9 @@ original_name="sbx_template"
 # for filename in $(find . -name "*.*") 
 for filename in $(git ls-files) 
 do
+    if [[ $filename == .github/workflows/*.yml ]]; then
+        continue
+    fi
     sed -i "s/$original_full_name/$full_name/g" $filename
     sed -i "s/$original_name/$name/g" $filename
     #sed -i "s/$original_urlname/$urlname/g" $filename

@@ -47,7 +47,7 @@ This directory contains scripts that can be run by rules. Use this for any rules
 
 <img src="https://github.com/sunbeam-labs/sunbeam/blob/stable/docs/images/sunbeam_logo.gif" width=120, height=120 align="left" />
 
-# Sunbeam extension template
+# sbx_template
 
 <!-- Badges start -->
 [![Tests](https://github.com/sunbeam-labs/sbx_template/actions/workflows/tests.yml/badge.svg)](https://github.com/sunbeam-labs/sbx_template/actions/workflows/tests.yml)

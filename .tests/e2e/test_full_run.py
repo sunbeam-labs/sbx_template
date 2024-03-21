@@ -1,5 +1,3 @@
-import csv
-import os
 import pytest
 import shutil
 import subprocess as sp

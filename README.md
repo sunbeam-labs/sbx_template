@@ -55,7 +55,7 @@ The Dockerfiles provided with conda env specifications allow for containerized r
 
 <!-- Badges start -->
 [![Tests](https://github.com/sunbeam-labs/sbx_template/actions/workflows/tests.yml/badge.svg)](https://github.com/sunbeam-labs/sbx_template/actions/workflows/tests.yml)
-[![Super-Linter](https://github.com/sunbeam-labs/sbx_template/actions/workflows/linters.yml/badge.svg)](https://github.com/sunbeam-labs/sbx_template/actions/workflows/linters.yml)
+[![DockerHub](https://img.shields.io/docker/pulls/sunbeamlabs/sbx_template)](https://hub.docker.com/repository/docker/sunbeamlabs/sbx_template/)
 <!-- Badges end -->
 
 ## Introduction

@@ -1,8 +1,7 @@
-import csv
-import os
 import pytest
 import shutil
 import subprocess as sp
+import sys
 import tempfile
 from pathlib import Path
 
@@ -41,19 +40,30 @@ def setup():
 @pytest.fixture
 def run_sunbeam(setup):
     temp_dir, project_dir = setup
+    output_fp = project_dir / "sunbeam_output"
+    log_fp = output_fp / "logs"
+    stats_fp = project_dir / "stats"
 
-    # Run the test job.
-    sp.check_output(
-        [
-            "sunbeam",
-            "run",
-            "--profile",
-            project_dir,
-            "all_template",
-            "--directory",
-            temp_dir,
-        ]
-    )
+    # Run the test job
+    try:
+        sp.check_output(
+            [
+                "sunbeam",
+                "run",
+                "--profile",
+                project_dir,
+                "all_template",
+                "--directory",
+                temp_dir,
+            ]
+        )
+    except sp.CalledProcessError as e:
+        shutil.copytree(log_fp, "logs/")
+        shutil.copytree(stats_fp, "stats/")
+        sys.exit(e)
+
+    shutil.copytree(log_fp, "logs/")
+    shutil.copytree(stats_fp, "stats/")
 
     output_fp = project_dir / "sunbeam_output"
     benchmarks_fp = project_dir / "stats/"

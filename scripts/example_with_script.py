@@ -1,5 +1,10 @@
-from pathlib import Path
+import subprocess as sp
 
-Path(snakemake.output[0]).symlink_to(snakemake.input[0])
+
+args = ["samtools", "--help"]
+res = sp.check_output(args)
+with open(snakemake.output[0], "wb") as f:
+    f.write(res)
+
 with open(snakemake.log[0], "w") as f:
-    f.write("File copied!")
+    f.write("File created!")

@@ -32,7 +32,7 @@ The dependency .yml file can be named whatever you want, as long as you refer to
 
 ### .github/
 
-This directory contains CI workflows for GitHub to run automatically on PRs, including tests and linting. If the linter raises errors, you can fix them by running `snakefmt` on any snakemake files and `black` on any python files.
+This directory contains CI workflows for GitHub to run automatically on PRs, including tests and linting. If the linter raises errors, you can fix them by running `snakefmt` on any snakemake files and `black` on any python files. The release workflow will build and push a docker image for each environment in the extension.
 
 ### .tests/
 
@@ -41,6 +41,10 @@ This directory contains tests, broken down into types such as end-to-end (e2e) a
 ### scripts/
 
 This directory contains scripts that can be run by rules. Use this for any rules that need to run python, R, etc code.
+
+### envs/*.Dockerfile
+
+The Dockerfiles provided with conda env specifications allow for containerized runs of sunbeam (meaning they use docker containers to run each rule rather than conda envs).
 
 (You can delete everything above this line)
 -----------------------------------------------------------------

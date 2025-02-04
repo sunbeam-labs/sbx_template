@@ -49,7 +49,7 @@ The Dockerfiles provided with conda env specifications allow for containerized r
 (You can delete everything above this line)
 -----------------------------------------------------------------
 
-<img src="https://github.com/sunbeam-labs/sunbeam/blob/stable/docs/images/sunbeam_logo.gif" width=120, height=120 align="left" />
+<img src="https://github.com/sunbeam-labs/sunbeam/blob/main/docs/images/sunbeam_logo.gif" width=120, height=120 align="left" />
 
 # sbx_template
 

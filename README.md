@@ -19,9 +19,7 @@ sbx_template is a [sunbeam](https://github.com/sunbeam-labs/sunbeam) extension f
 
 ## Config
 
-  - mash_ref: the reference file for running Mash (should be a file ending in `.msh`)
-  - checkm_ref: the diamond database for running CheckM2 (should be a file ending in `.dmnd`)
-  - bakta_ref: the bakta reference database (should be a directory similar to `.../bakta_db/db/`)
+  - example_rule_options: Example rule options
     
 ## Docs
 

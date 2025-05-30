@@ -1,2 +1,2 @@
 sbx_template:
-  example_rule_options: 'DUMMY STRING'
+  example_rule_options: /path/to/example_rule_thingy

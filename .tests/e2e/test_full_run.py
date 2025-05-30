@@ -18,7 +18,7 @@ def setup():
 
     config_fp = project_dir / "sunbeam_config.yml"
 
-    config_str = f"sbx_template: {{example_rule_options: '--arg'}}"
+    config_str = f"sbx_template: {{example_rule_options: '-u'}}"
 
     sp.check_output(
         [

@@ -1,22 +1,4 @@
-def get_template_path() -> Path:
-    for fp in sys.path:
-        if fp.split("/")[-1] == "sbx_template":
-            return Path(fp)
-    raise Error(
-        "Filepath for sbx_template not found, are you sure it's installed under extensions/sbx_template?"
-    )
-
-
-SBX_TEMPLATE_VERSION = open(get_template_path() / "VERSION").read().strip()
-
-try:
-    BENCHMARK_FP
-except NameError:
-    BENCHMARK_FP = output_subdir(Cfg, "benchmarks")
-try:
-    LOG_FP
-except NameError:
-    LOG_FP = output_subdir(Cfg, "logs")
+SBX_TEMPLATE_VERSION = get_ext_version("sbx_template")
 
 
 localrules:

@@ -39,4 +39,7 @@ mv sbx_template.smk $name.smk
 mv envs/sbx_template_env.yml "envs/${name}_env.yml"
 
 # This command runs only once on GHA!
-rm -rf .github/template.yml
+rm -f .github/template.yml
+rm -f .github/rename_project.sh
+rm -f .github/workflows/rename_extension.yml
+echo "Project renamed successfully!"

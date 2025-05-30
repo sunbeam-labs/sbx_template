@@ -1,4 +1,8 @@
-SBX_TEMPLATE_VERSION = get_ext_version("sbx_template")
+try:
+    SBX_TEMPLATE_VERSION = get_ext_version("sbx_template")
+except NameError:
+    # For backwards compatibility with older versions of Sunbeam
+    SBX_TEMPLATE_VERSION = "0.0.0"
 
 
 localrules:

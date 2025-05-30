@@ -51,7 +51,6 @@ def run_sunbeam(setup):
             "all_template",
             "--directory",
             temp_dir,
-            "-n",
         ],
         capture_output=True,
         text=True,

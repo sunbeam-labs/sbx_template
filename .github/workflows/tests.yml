@@ -22,9 +22,9 @@ jobs:
       - name: Dump Logs
         shell: bash
         if: always()
-        run: tail -n +1 logs/*
+        run: tail -n +1 logs/* || true
       
       - name: Dump Stats
         shell: bash
         if: always()
-        run: cat stats/*
+        run: cat stats/* || true

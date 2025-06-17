@@ -7,12 +7,10 @@ from pathlib import Path
 
 
 @pytest.fixture
-def setup():
-    temp_dir = Path(tempfile.mkdtemp())
-
+def setup(tmp_path):
     reads_fp = Path(".tests/data/reads/").resolve()
 
-    project_dir = temp_dir / "project/"
+    project_dir = tmp_path / "project/"
 
     sp.check_output(["sunbeam", "init", "--data_fp", reads_fp, project_dir])
 
@@ -30,14 +28,14 @@ def setup():
         ]
     )
 
-    yield temp_dir, project_dir
+    yield tmp_path, project_dir
 
-    shutil.rmtree(temp_dir)
+    shutil.rmtree(tmp_path)
 
 
 @pytest.fixture
 def run_sunbeam(setup):
-    temp_dir, project_dir = setup
+    tmp_path, project_dir = setup
     output_fp = project_dir / "sunbeam_output"
     log_fp = output_fp / "logs"
     stats_fp = project_dir / "stats"
@@ -50,7 +48,7 @@ def run_sunbeam(setup):
             project_dir,
             "all_template",
             "--directory",
-            temp_dir,
+            tmp_path,
         ],
         capture_output=True,
         text=True,

@@ -4,6 +4,19 @@ except NameError:
     # For backwards compatibility with older versions of Sunbeam
     SBX_TEMPLATE_VERSION = "0.0.0"
 
+try:
+    logger = get_extension_logger("sbx_template")
+except NameError:
+    # For backwards compatibility with older versions of Sunbeam
+    import logging
+
+    logger = logging.getLogger("sunbeam.pipeline.extensions.sbx_template")
+
+
+logger.info("Doing some extension specific setup...")
+logger.info(f"Using sbx_template version {SBX_TEMPLATE_VERSION}.")
+logger.error("Don't worry, this isn't a real error.")
+
 
 localrules:
     all_template,
@@ -31,7 +44,7 @@ rule example_rule:
     container:
         f"docker://sunbeamlabs/sbx_template:{SBX_TEMPLATE_VERSION}"
     shell:
-        "cat {params.opts} {input} >> {output} 2> {log}"
+        "(cat {params.opts} {input} > {output}) > {log} 2>&1"
 
 
 rule example_with_script:

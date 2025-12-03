@@ -28,9 +28,9 @@ rule all_template:
 
 
 rule example_rule:
-    """Takes in cleaned .fastq.gz and mushes them all together into a file"""
+    """Takes in decontaminated .fastq.gz and mushes them all together into a file"""
     input:
-        expand(QC_FP / "cleaned" / "{sample}_{rp}.fastq.gz", sample=Samples, rp=Pairs),
+        expand(QC_FP / "decontam" / "{sample}_{rp}.fastq.gz", sample=Samples, rp=Pairs),
     output:
         QC_FP / "mush" / "big_file1.txt",
     log:
